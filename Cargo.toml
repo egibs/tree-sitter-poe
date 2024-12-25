@@ -1,0 +1,27 @@
+[package]
+name = "tree-sitter-path-of-exile"
+description = "Tree-sitter plugin for Path of Exile .filter files."
+version = "0.0.1"
+authors = ["egibs <evan@egibs.xyz>"]
+license = "Apache License 2.0"
+readme = "README.md"
+keywords = ["incremental", "parsing", "tree-sitter", "path-of-exile"]
+categories = ["parsing", "text-editors"]
+repository = "https://github/egibs/tree-sitter-poe"
+edition = "2021"
+autoexamples = false
+
+build = "bindings/rust/build.rs"
+include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*", "tree-sitter.json"]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.1.22"
+
+[dev-dependencies]
+tree-sitter = "0.24.5"

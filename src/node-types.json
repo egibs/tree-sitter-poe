@@ -1,0 +1,791 @@
+[
+  {
+    "type": "action_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "action_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "action_name",
+            "named": true
+          }
+        ]
+      },
+      "values": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "action_values",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "action_values",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "comment_text",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "comparison_op",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "condition_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "condition_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "action_statement",
+            "named": true
+          },
+          {
+            "type": "condition_name",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "comparison_op",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "condition_value",
+            "named": true
+          },
+          {
+            "type": "string_list",
+            "named": true
+          },
+          {
+            "type": "value_list",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "condition_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "empty_line",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "import_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "indent",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "inline_comment",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "comment_text",
+          "named": true
+        },
+        {
+          "type": "metadata",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "metadata",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "quoted_string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "section_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "show_hide_statement",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "empty_line",
+          "named": true
+        },
+        {
+          "type": "standalone_comment",
+          "named": true
+        },
+        {
+          "type": "statement_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "standalone_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "action_statement",
+          "named": true
+        },
+        {
+          "type": "condition_statement",
+          "named": true
+        },
+        {
+          "type": "import_statement",
+          "named": true
+        },
+        {
+          "type": "section_declaration",
+          "named": true
+        },
+        {
+          "type": "show_hide_statement",
+          "named": true
+        },
+        {
+          "type": "style_declaration",
+          "named": true
+        },
+        {
+          "type": "variable_declaration",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "statement_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "indent",
+          "named": true
+        },
+        {
+          "type": "inline_comment",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "style_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "value_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "variable_declaration",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "quoted_string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": " ",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": "%",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "==",
+    "named": false
+  },
+  {
+    "type": "=>",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
+    "named": false
+  },
+  {
+    "type": "AlternateQuality",
+    "named": false
+  },
+  {
+    "type": "AnyEnchantment",
+    "named": false
+  },
+  {
+    "type": "AreaLevel",
+    "named": false
+  },
+  {
+    "type": "BaseArmour",
+    "named": false
+  },
+  {
+    "type": "BaseDefencePercentile",
+    "named": false
+  },
+  {
+    "type": "BaseEnergyShield",
+    "named": false
+  },
+  {
+    "type": "BaseEvasion",
+    "named": false
+  },
+  {
+    "type": "BaseType",
+    "named": false
+  },
+  {
+    "type": "BaseWard",
+    "named": false
+  },
+  {
+    "type": "BlightedMap",
+    "named": false
+  },
+  {
+    "type": "Class",
+    "named": false
+  },
+  {
+    "type": "Cont",
+    "named": false
+  },
+  {
+    "type": "Continue",
+    "named": false
+  },
+  {
+    "type": "Corrupted",
+    "named": false
+  },
+  {
+    "type": "CorruptedMods",
+    "named": false
+  },
+  {
+    "type": "CustomAlertSound",
+    "named": false
+  },
+  {
+    "type": "DisableDropSound",
+    "named": false
+  },
+  {
+    "type": "DropLevel",
+    "named": false
+  },
+  {
+    "type": "ElderItem",
+    "named": false
+  },
+  {
+    "type": "ElderMap",
+    "named": false
+  },
+  {
+    "type": "EnchantmentPassiveNode",
+    "named": false
+  },
+  {
+    "type": "EnchantmentPassiveNum",
+    "named": false
+  },
+  {
+    "type": "False",
+    "named": false
+  },
+  {
+    "type": "FracturedItem",
+    "named": false
+  },
+  {
+    "type": "GemLevel",
+    "named": false
+  },
+  {
+    "type": "HasCruciblePassiveTree",
+    "named": false
+  },
+  {
+    "type": "HasEaterOfWorldsImplicit",
+    "named": false
+  },
+  {
+    "type": "HasExplicitMod",
+    "named": false
+  },
+  {
+    "type": "HasImplicitMod",
+    "named": false
+  },
+  {
+    "type": "HasInfluence",
+    "named": false
+  },
+  {
+    "type": "HasSearingExarchImplicit",
+    "named": false
+  },
+  {
+    "type": "Height",
+    "named": false
+  },
+  {
+    "type": "Hide",
+    "named": false
+  },
+  {
+    "type": "HideD",
+    "named": false
+  },
+  {
+    "type": "Identified",
+    "named": false
+  },
+  {
+    "type": "Import",
+    "named": false
+  },
+  {
+    "type": "ItemLevel",
+    "named": false
+  },
+  {
+    "type": "LinkedSockets",
+    "named": false
+  },
+  {
+    "type": "MapTier",
+    "named": false
+  },
+  {
+    "type": "MinimapIcon",
+    "named": false
+  },
+  {
+    "type": "Mirrored",
+    "named": false
+  },
+  {
+    "type": "Optional",
+    "named": false
+  },
+  {
+    "type": "PlayAlertSound",
+    "named": false
+  },
+  {
+    "type": "PlayAlertSoundPositional",
+    "named": false
+  },
+  {
+    "type": "PlayEffect",
+    "named": false
+  },
+  {
+    "type": "Quality",
+    "named": false
+  },
+  {
+    "type": "Rarity",
+    "named": false
+  },
+  {
+    "type": "Replica",
+    "named": false
+  },
+  {
+    "type": "Scourged",
+    "named": false
+  },
+  {
+    "type": "Section",
+    "named": false
+  },
+  {
+    "type": "SetBackgroundColor",
+    "named": false
+  },
+  {
+    "type": "SetBorderColor",
+    "named": false
+  },
+  {
+    "type": "SetFontSize",
+    "named": false
+  },
+  {
+    "type": "SetTextColor",
+    "named": false
+  },
+  {
+    "type": "ShapedMap",
+    "named": false
+  },
+  {
+    "type": "ShaperItem",
+    "named": false
+  },
+  {
+    "type": "Show",
+    "named": false
+  },
+  {
+    "type": "ShowD",
+    "named": false
+  },
+  {
+    "type": "SocketGroup",
+    "named": false
+  },
+  {
+    "type": "Sockets",
+    "named": false
+  },
+  {
+    "type": "StackSize",
+    "named": false
+  },
+  {
+    "type": "Style",
+    "named": false
+  },
+  {
+    "type": "Synthesised",
+    "named": false
+  },
+  {
+    "type": "SynthesisedItem",
+    "named": false
+  },
+  {
+    "type": "TransfiguredGem",
+    "named": false
+  },
+  {
+    "type": "True",
+    "named": false
+  },
+  {
+    "type": "UberBlightedMap",
+    "named": false
+  },
+  {
+    "type": "Width",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "var",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]
